@@ -29,11 +29,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: const Text('Home Page')),
         body: Center(
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.65,
+            height: MediaQuery.of(context).size.height,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
                   controller: _email,
@@ -49,9 +50,18 @@ class _HomePageState extends State<HomePage> {
                   decoration:
                       const InputDecoration(hintText: 'Enter password here'),
                 ),
-                const TextButton(
-                  onPressed: null,
-                  child: Text('Registro'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    TextButton(
+                      onPressed: null,
+                      child: Text('Esqueci a senha'),
+                    ),
+                    ElevatedButton(
+                      onPressed: null,
+                      child: Text('Entrar'),
+                    ),
+                  ],
                 ),
               ],
             ),
