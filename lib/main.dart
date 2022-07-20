@@ -1,18 +1,35 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:test_app/home_page.dart';
+import 'package:flutter/services.dart';
+import 'package:test_app/login_screen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  runZonedGuarded<Future<void>>(
+    () async {
+      await SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp],
+      );
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-    );
-  }
+      runApp(
+        const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
+          home: LoginScreen(),
+        ),
+      );
+    },
+    (error, stackTrace) async {
+      //Verifies if your applications is in debug mode
+      if (kDebugMode) {
+        print('Caught Dart Error!');
+        print('$error');
+        print('$stackTrace');
+      }
+    },
+  );
+
 }
