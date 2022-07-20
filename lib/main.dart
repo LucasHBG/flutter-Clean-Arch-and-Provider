@@ -8,6 +8,7 @@ import 'package:test_app/login_screen.dart';
 
 Future<void> main() async {
   final router = GoRouter(
+    initialLocation: '/login',
     routes: [
       GoRoute(
         path: '/login',
@@ -38,6 +39,7 @@ Future<void> main() async {
         MaterialApp.router(
           routeInformationParser: router.routeInformationParser,
           routerDelegate: router.routerDelegate,
+          routeInformationProvider: router.routeInformationProvider,
           debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.system,
         ),
