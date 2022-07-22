@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_app/home_screen.dart';
 import 'package:test_app/login_screen.dart';
 
 Future<void> main() async {
@@ -15,6 +16,13 @@ Future<void> main() async {
         pageBuilder: (context, state) => MaterialPage(
           key: state.pageKey,
           child: const LoginScreen(),
+        ),
+      ),
+      GoRoute(
+        path: '/home',
+        pageBuilder: (context, state) => MaterialPage(
+          key: state.pageKey,
+          child: const HomeScreen(),
         ),
       ),
     ],
