@@ -27,44 +27,41 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.65,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                  controller: _email,
-                  autocorrect: true,
-                  decoration:
-                      const InputDecoration(hintText: 'Enter email here'),
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                TextField(
-                  controller: _password,
-                  autocorrect: false,
-                  obscureText: true,
-                  decoration:
-                      const InputDecoration(hintText: 'Enter password here'),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    TextButton(
-                      onPressed: null,
-                      child: Text('Esqueci a senha'),
-                    ),
-                    ElevatedButton(
-                      onPressed: null,
-                      child: Text('Entrar'),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.65,
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: _email,
+                autocorrect: true,
+                decoration: const InputDecoration(hintText: 'Enter email here'),
+                keyboardType: TextInputType.emailAddress,
+              ),
+              TextField(
+                controller: _password,
+                autocorrect: false,
+                obscureText: true,
+                decoration:
+                    const InputDecoration(hintText: 'Enter password here'),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  TextButton(
+                    onPressed: null,
+                    child: Text('Esqueci a senha'),
+                  ),
+                  ElevatedButton(
+                    onPressed: null,
+                    child: Text('Entrar'),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
