@@ -27,11 +27,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.65,
-          height: MediaQuery.of(context).size.height,
+          width: size.width * 0.65,
+          height: size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
