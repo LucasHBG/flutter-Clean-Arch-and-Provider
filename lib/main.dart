@@ -9,7 +9,7 @@ import 'package:test_app/login_screen.dart';
 
 Future<void> main() async {
   final router = GoRouter(
-    initialLocation: '/login',
+    initialLocation: '/home',
     routes: [
       GoRoute(
         path: '/login',
@@ -49,7 +49,7 @@ Future<void> main() async {
           routerDelegate: router.routerDelegate,
           routeInformationProvider: router.routeInformationProvider,
           debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.system,
+          themeMode: ThemeMode.dark,
         ),
       );
     },
