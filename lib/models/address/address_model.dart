@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:test_app/model/geolocation/geolocation_model.dart';
+import '../geolocation/geolocation_model.dart';
 
 part 'address_model.freezed.dart';
 part 'address_model.g.dart';
