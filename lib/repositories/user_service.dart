@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
 
+import 'package:test_app/models/user/users_list.dart';
 import 'package:test_app/repositories/api_status.dart';
 import 'package:test_app/utils/constants.dart';
 import 'package:http/http.dart' as http;
@@ -8,10 +10,12 @@ class UserService {
   //! to be changed
   static Future<Object> getUsers() async {
     try {
-      var response = await http
+      final response = await http
           .get(Uri.parse("https://jsonplaceholder.typicode.com/users"));
+
       if (success == response.statusCode) {
-        return Success(code: success, response: response.body);
+        final List<UserModel> data = json.decode(response.body);
+        return Success(code: response.statusCode, response: data);
       }
       return Failure(
           code: userInvalidResponse, errorResponse: 'Invalid Response!');
