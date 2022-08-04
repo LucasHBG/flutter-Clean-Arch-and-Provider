@@ -6,5 +6,5 @@ import 'package:test_app/models/users_list/users_list_model.dart';
 ///
 ///Source: https://stackoverflow.com/a/20791334/9816802
 abstract class UserRepository {
-  Future<UsersListModel?> getUsersList() async {}
+  Future<UsersListModel?> getUsersList();
 }
