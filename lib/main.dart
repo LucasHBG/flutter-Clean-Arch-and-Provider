@@ -4,8 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-import 'package:test_app/home_screen.dart';
-import 'package:test_app/login_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:test_app/view/home_page.dart';
+import 'package:test_app/view/login_page.dart';
+import 'package:test_app/view/user_list_mgmt_page.dart';
+import 'package:test_app/view_models/user_view_model.dart';
 
 Future<void> main() async {
   final router = GoRouter(
@@ -15,16 +18,23 @@ Future<void> main() async {
         path: '/login',
         pageBuilder: (context, state) => MaterialPage(
           key: state.pageKey,
-          child: const LoginScreen(),
+          child: const LoginPage(),
         ),
       ),
       GoRoute(
         path: '/home',
         pageBuilder: (context, state) => MaterialPage(
           key: state.pageKey,
-          child: const HomeScreen(),
+          child: const HomePage(),
         ),
       ),
+      GoRoute(
+        path: '/user-list-mgmt',
+        pageBuilder: (context, state) => MaterialPage(
+          key: state.pageKey,
+          child: const UserListMgmtPage(),
+        ),
+      )
     ],
     //Handle all errors related to a route that dont exists
     errorPageBuilder: (context, state) => MaterialPage(
@@ -44,12 +54,17 @@ Future<void> main() async {
       );
 
       runApp(
-        MaterialApp.router(
-          routeInformationParser: router.routeInformationParser,
-          routerDelegate: router.routerDelegate,
-          routeInformationProvider: router.routeInformationProvider,
-          debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.dark,
+        MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (context) => UserViewModel()),
+          ],
+          child: MaterialApp.router(
+            routeInformationParser: router.routeInformationParser,
+            routerDelegate: router.routerDelegate,
+            routeInformationProvider: router.routeInformationProvider,
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.dark,
+          ),
         ),
       );
     },
