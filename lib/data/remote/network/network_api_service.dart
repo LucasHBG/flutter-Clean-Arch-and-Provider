@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:test_app/data/remote/app_exception.dart';
 import 'package:test_app/data/remote/network/base_api_service.dart';
 
+//TODO: add all requests type like POST, PUT and DELETE
 //Generalistic class to handle all Responses from app requests
 class NetworkApiService extends BaseApiService {
   @override
