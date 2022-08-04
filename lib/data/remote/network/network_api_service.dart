@@ -12,12 +12,10 @@ class NetworkApiService extends BaseApiService {
   Future getResponse(String url) async {
     dynamic responseJson;
 
-    //Try to make the request
     try {
       final response = await http.get(Uri.parse(baseUrl + url));
       responseJson = returnResponse(response);
     } on SocketException {
-      //Using rethrow to return first throw caught exception
       throw FetchDataException('No Internet Connection');
     }
     return responseJson;
