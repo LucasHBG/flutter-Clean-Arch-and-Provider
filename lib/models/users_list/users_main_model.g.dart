@@ -2,22 +2,24 @@
 
 // ignore_for_file: non_constant_identifier_names
 
-part of 'users_list_model.dart';
+part of 'users_main_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersListModel _$$_UsersListModelFromJson(Map<String, dynamic> json) =>
-    _$_UsersListModel(
-      user: (json['user'] as List<dynamic>?)
+_$_UsersMainListModel _$$_UsersMainListModelFromJson(
+        Map<String, dynamic> json) =>
+    _$_UsersMainListModel(
+      users: (json['users'] as List<dynamic>?)
           ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_UsersListModelToJson(_$_UsersListModel instance) =>
+Map<String, dynamic> _$$_UsersMainListModelToJson(
+        _$_UsersMainListModel instance) =>
     <String, dynamic>{
-      'user': instance.user,
+      'users': instance.users,
     };
 
 _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(

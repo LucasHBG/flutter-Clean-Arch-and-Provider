@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'users_list_model.dart';
+part of 'users_main_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,79 +14,79 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UsersListModel _$UsersListModelFromJson(Map<String, dynamic> json) {
-  return _UsersListModel.fromJson(json);
+UsersMainModel _$UsersMainModelFromJson(Map<String, dynamic> json) {
+  return _UsersMainListModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UsersListModel {
-  List<UserModel>? get user => throw _privateConstructorUsedError;
+mixin _$UsersMainModel {
+  List<UserModel>? get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UsersListModelCopyWith<UsersListModel> get copyWith =>
+  $UsersMainModelCopyWith<UsersMainModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsersListModelCopyWith<$Res> {
-  factory $UsersListModelCopyWith(
-          UsersListModel value, $Res Function(UsersListModel) then) =
-      _$UsersListModelCopyWithImpl<$Res>;
-  $Res call({List<UserModel>? user});
+abstract class $UsersMainModelCopyWith<$Res> {
+  factory $UsersMainModelCopyWith(
+          UsersMainModel value, $Res Function(UsersMainModel) then) =
+      _$UsersMainModelCopyWithImpl<$Res>;
+  $Res call({List<UserModel>? users});
 }
 
 /// @nodoc
-class _$UsersListModelCopyWithImpl<$Res>
-    implements $UsersListModelCopyWith<$Res> {
-  _$UsersListModelCopyWithImpl(this._value, this._then);
+class _$UsersMainModelCopyWithImpl<$Res>
+    implements $UsersMainModelCopyWith<$Res> {
+  _$UsersMainModelCopyWithImpl(this._value, this._then);
 
-  final UsersListModel _value;
+  final UsersMainModel _value;
   // ignore: unused_field
-  final $Res Function(UsersListModel) _then;
+  final $Res Function(UsersMainModel) _then;
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? users = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
+      users: users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
               as List<UserModel>?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_UsersListModelCopyWith<$Res>
-    implements $UsersListModelCopyWith<$Res> {
-  factory _$$_UsersListModelCopyWith(
-          _$_UsersListModel value, $Res Function(_$_UsersListModel) then) =
-      __$$_UsersListModelCopyWithImpl<$Res>;
+abstract class _$$_UsersMainListModelCopyWith<$Res>
+    implements $UsersMainModelCopyWith<$Res> {
+  factory _$$_UsersMainListModelCopyWith(_$_UsersMainListModel value,
+          $Res Function(_$_UsersMainListModel) then) =
+      __$$_UsersMainListModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<UserModel>? user});
+  $Res call({List<UserModel>? users});
 }
 
 /// @nodoc
-class __$$_UsersListModelCopyWithImpl<$Res>
-    extends _$UsersListModelCopyWithImpl<$Res>
-    implements _$$_UsersListModelCopyWith<$Res> {
-  __$$_UsersListModelCopyWithImpl(
-      _$_UsersListModel _value, $Res Function(_$_UsersListModel) _then)
-      : super(_value, (v) => _then(v as _$_UsersListModel));
+class __$$_UsersMainListModelCopyWithImpl<$Res>
+    extends _$UsersMainModelCopyWithImpl<$Res>
+    implements _$$_UsersMainListModelCopyWith<$Res> {
+  __$$_UsersMainListModelCopyWithImpl(
+      _$_UsersMainListModel _value, $Res Function(_$_UsersMainListModel) _then)
+      : super(_value, (v) => _then(v as _$_UsersMainListModel));
 
   @override
-  _$_UsersListModel get _value => super._value as _$_UsersListModel;
+  _$_UsersMainListModel get _value => super._value as _$_UsersMainListModel;
 
   @override
   $Res call({
-    Object? user = freezed,
+    Object? users = freezed,
   }) {
-    return _then(_$_UsersListModel(
-      user: user == freezed
-          ? _value._user
-          : user // ignore: cast_nullable_to_non_nullable
+    return _then(_$_UsersMainListModel(
+      users: users == freezed
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
               as List<UserModel>?,
     ));
   }
@@ -94,16 +94,16 @@ class __$$_UsersListModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersListModel implements _UsersListModel {
-  const _$_UsersListModel({final List<UserModel>? user}) : _user = user;
+class _$_UsersMainListModel implements _UsersMainListModel {
+  const _$_UsersMainListModel({final List<UserModel>? users}) : _users = users;
 
-  factory _$_UsersListModel.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersListModelFromJson(json);
+  factory _$_UsersMainListModel.fromJson(Map<String, dynamic> json) =>
+      _$$_UsersMainListModelFromJson(json);
 
-  final List<UserModel>? _user;
+  final List<UserModel>? _users;
   @override
-  List<UserModel>? get user {
-    final value = _user;
+  List<UserModel>? get users {
+    final value = _users;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
@@ -111,47 +111,48 @@ class _$_UsersListModel implements _UsersListModel {
 
   @override
   String toString() {
-    return 'UsersListModel(user: $user)';
+    return 'UsersMainModel(users: $users)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersListModel &&
-            const DeepCollectionEquality().equals(other._user, _user));
+            other is _$_UsersMainListModel &&
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_user));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UsersListModelCopyWith<_$_UsersListModel> get copyWith =>
-      __$$_UsersListModelCopyWithImpl<_$_UsersListModel>(this, _$identity);
+  _$$_UsersMainListModelCopyWith<_$_UsersMainListModel> get copyWith =>
+      __$$_UsersMainListModelCopyWithImpl<_$_UsersMainListModel>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersListModelToJson(
+    return _$$_UsersMainListModelToJson(
       this,
     );
   }
 }
 
-abstract class _UsersListModel implements UsersListModel {
-  const factory _UsersListModel({final List<UserModel>? user}) =
-      _$_UsersListModel;
+abstract class _UsersMainListModel implements UsersMainModel {
+  const factory _UsersMainListModel({final List<UserModel>? users}) =
+      _$_UsersMainListModel;
 
-  factory _UsersListModel.fromJson(Map<String, dynamic> json) =
-      _$_UsersListModel.fromJson;
+  factory _UsersMainListModel.fromJson(Map<String, dynamic> json) =
+      _$_UsersMainListModel.fromJson;
 
   @override
-  List<UserModel>? get user;
+  List<UserModel>? get users;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersListModelCopyWith<_$_UsersListModel> get copyWith =>
+  _$$_UsersMainListModelCopyWith<_$_UsersMainListModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

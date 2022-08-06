@@ -6,22 +6,22 @@ import 'dart:convert';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'users_list_model.freezed.dart';
-part 'users_list_model.g.dart';
+part 'users_main_model.freezed.dart';
+part 'users_main_model.g.dart';
 
-UsersListModel usersListFromJson(String str) =>
-    UsersListModel.fromJson(json.decode(str));
+UsersMainModel usersMainFromJson(String str) =>
+    UsersMainModel.fromJson(json.decode(str));
 
-String usersListToJson(UsersListModel data) => json.encode(data.toJson());
+String usersMainToJson(UsersMainModel data) => json.encode(data.toJson());
 
 @freezed
-class UsersListModel with _$UsersListModel {
-  const factory UsersListModel({
-    List<UserModel>? user,
-  }) = _UsersListModel;
+class UsersMainModel with _$UsersMainModel {
+  const factory UsersMainModel({
+    List<UserModel>? users,
+  }) = _UsersMainListModel;
 
-  factory UsersListModel.fromJson(Map<String, dynamic> json) =>
-      _$UsersListModelFromJson(json);
+  factory UsersMainModel.fromJson(Map<String, dynamic> json) =>
+      _$UsersMainModelFromJson(json);
 }
 
 @freezed
