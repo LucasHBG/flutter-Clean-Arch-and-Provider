@@ -1,7 +1,9 @@
 import 'package:test_app/data/remote/response/status.dart';
 
-///Class responsible to manage and inform current `status`
-///from Api's related tasks.
+/// This is the generic response class for the API response
+/// with generic data and also has three states:
+/// `loading, complete & error` which help us to manage the
+/// view as per the API state.
 ///
 ///Should be used mainly on `[ViewModel]` classes to handle
 /// **business logic** and therefore help the `[View]`
