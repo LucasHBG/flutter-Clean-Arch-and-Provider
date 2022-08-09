@@ -1,3 +1,7 @@
+# What is this project ?
+
+It's simply a personal project made to study and reinforce my knownledge with: MVVM, Clean Arch, Component-Based folders and Provider + ChangeNotifier.
+
 # MVVM Best Practices + Clean Arch
 
 **data:** This directory will hold all the network & local DB-related classes.
@@ -21,7 +25,7 @@ This projects uses the following packages:
     Freezed  -> Code Generator for classes
     Http     -> Creating http calls POST/GET/PUT/DEL etc
 
-# Freezed
+### Freezed
 
 When you alter anything in a class with `@freezed` annotation, then you should run the code at the terminal in order to rebuild all associated classes
 
