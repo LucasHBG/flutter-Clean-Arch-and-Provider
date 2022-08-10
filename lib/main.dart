@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/view/home_page.dart';
-import 'package:test_app/view/login_page.dart';
-import 'package:test_app/view/user_list_mgmt_page.dart';
-import 'package:test_app/view_models/user_view_model.dart';
+
+import 'res/colors/app_colors.dart';
+import 'view/home_page.dart';
+import 'view/login_page.dart';
+import 'view/user_list_mgmt_page.dart';
+import 'view_models/user_view_model.dart';
 
 Future<void> main() async {
   final router = GoRouter(
@@ -56,7 +58,7 @@ Future<void> main() async {
       runApp(
         MultiProvider(
           providers: [
-            ChangeNotifierProvider(create: (context) => UserViewModel()),
+            ChangeNotifierProvider(create: (context) => UsersListVM()),
           ],
           child: MaterialApp.router(
             routeInformationParser: router.routeInformationParser,
@@ -64,6 +66,9 @@ Future<void> main() async {
             routeInformationProvider: router.routeInformationProvider,
             debugShowCheckedModeBanner: false,
             themeMode: ThemeMode.dark,
+            theme: ThemeData(
+              backgroundColor: AppColors().colorBackground,
+            ),
           ),
         ),
       );
