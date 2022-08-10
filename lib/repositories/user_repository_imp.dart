@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:test_app/data/remote/network/api_endpoints.dart';
 import 'package:test_app/data/remote/network/base_api_service.dart';
 import 'package:test_app/data/remote/network/network_api_service.dart';
@@ -7,19 +8,28 @@ import 'package:test_app/repositories/user_repository.dart';
 class UserRepositoryImp implements UserRepository {
   final BaseApiService _baseApiService = NetworkApiService();
 
+  /// Since we are getting a List of json objects from http, we should pass
+  /// it as parameter at: [UsersListModel.fromJson({ 'data': <my list> })]
+  /// in order to map it correctly.
+  ///
+  /// The built in `fromJson` expects a `Map<String, dynamic>` therefore we
+  /// are passing it as `List<dynamic>`
+  ///
+  /// Source: https://github.com/rrousselGit/freezed/issues/173
   @override
   Future<UsersListModel?> getUsersList() async {
     try {
-      dynamic response =
+      dynamic jsonString =
           await _baseApiService.getResponse(ApiEndpoints().getUsers);
 
-      print("If successfull: $response");
+      debugPrint("If successfull: $jsonString");
 
-      //Parse the result into a object of type UsersListModel
-      final jsonData = UsersListModel.fromJson(response);
-      return jsonData;
+      /// Here we're parsing the result (List of json Objects of type User)
+      /// into a List<dynamic>
+      final jsonResponse = UsersListModel.fromJson({'users': jsonString});
+      return jsonResponse;
     } catch (e) {
-      print("[Exception] if fail: $e}");
+      debugPrint("[Exception] if fail: $e}");
       rethrow;
     }
   }
