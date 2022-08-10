@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'users_main_model.dart';
+part of 'users_list_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,36 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UsersMainModel _$UsersMainModelFromJson(Map<String, dynamic> json) {
-  return _UsersMainListModel.fromJson(json);
+UsersListModel _$UsersListModelFromJson(Map<String, dynamic> json) {
+  return _UsersListModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UsersMainModel {
+mixin _$UsersListModel {
   List<UserModel>? get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UsersMainModelCopyWith<UsersMainModel> get copyWith =>
+  $UsersListModelCopyWith<UsersListModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UsersMainModelCopyWith<$Res> {
-  factory $UsersMainModelCopyWith(
-          UsersMainModel value, $Res Function(UsersMainModel) then) =
-      _$UsersMainModelCopyWithImpl<$Res>;
+abstract class $UsersListModelCopyWith<$Res> {
+  factory $UsersListModelCopyWith(
+          UsersListModel value, $Res Function(UsersListModel) then) =
+      _$UsersListModelCopyWithImpl<$Res>;
   $Res call({List<UserModel>? users});
 }
 
 /// @nodoc
-class _$UsersMainModelCopyWithImpl<$Res>
-    implements $UsersMainModelCopyWith<$Res> {
-  _$UsersMainModelCopyWithImpl(this._value, this._then);
+class _$UsersListModelCopyWithImpl<$Res>
+    implements $UsersListModelCopyWith<$Res> {
+  _$UsersListModelCopyWithImpl(this._value, this._then);
 
-  final UsersMainModel _value;
+  final UsersListModel _value;
   // ignore: unused_field
-  final $Res Function(UsersMainModel) _then;
+  final $Res Function(UsersListModel) _then;
 
   @override
   $Res call({
@@ -59,31 +59,31 @@ class _$UsersMainModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_UsersMainListModelCopyWith<$Res>
-    implements $UsersMainModelCopyWith<$Res> {
-  factory _$$_UsersMainListModelCopyWith(_$_UsersMainListModel value,
-          $Res Function(_$_UsersMainListModel) then) =
-      __$$_UsersMainListModelCopyWithImpl<$Res>;
+abstract class _$$_UsersListModelCopyWith<$Res>
+    implements $UsersListModelCopyWith<$Res> {
+  factory _$$_UsersListModelCopyWith(
+          _$_UsersListModel value, $Res Function(_$_UsersListModel) then) =
+      __$$_UsersListModelCopyWithImpl<$Res>;
   @override
   $Res call({List<UserModel>? users});
 }
 
 /// @nodoc
-class __$$_UsersMainListModelCopyWithImpl<$Res>
-    extends _$UsersMainModelCopyWithImpl<$Res>
-    implements _$$_UsersMainListModelCopyWith<$Res> {
-  __$$_UsersMainListModelCopyWithImpl(
-      _$_UsersMainListModel _value, $Res Function(_$_UsersMainListModel) _then)
-      : super(_value, (v) => _then(v as _$_UsersMainListModel));
+class __$$_UsersListModelCopyWithImpl<$Res>
+    extends _$UsersListModelCopyWithImpl<$Res>
+    implements _$$_UsersListModelCopyWith<$Res> {
+  __$$_UsersListModelCopyWithImpl(
+      _$_UsersListModel _value, $Res Function(_$_UsersListModel) _then)
+      : super(_value, (v) => _then(v as _$_UsersListModel));
 
   @override
-  _$_UsersMainListModel get _value => super._value as _$_UsersMainListModel;
+  _$_UsersListModel get _value => super._value as _$_UsersListModel;
 
   @override
   $Res call({
     Object? users = freezed,
   }) {
-    return _then(_$_UsersMainListModel(
+    return _then(_$_UsersListModel(
       users: users == freezed
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
@@ -94,11 +94,12 @@ class __$$_UsersMainListModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UsersMainListModel implements _UsersMainListModel {
-  const _$_UsersMainListModel({final List<UserModel>? users}) : _users = users;
+class _$_UsersListModel implements _UsersListModel {
+  const _$_UsersListModel({required final List<UserModel>? users})
+      : _users = users;
 
-  factory _$_UsersMainListModel.fromJson(Map<String, dynamic> json) =>
-      _$$_UsersMainListModelFromJson(json);
+  factory _$_UsersListModel.fromJson(Map<String, dynamic> json) =>
+      _$$_UsersListModelFromJson(json);
 
   final List<UserModel>? _users;
   @override
@@ -111,14 +112,14 @@ class _$_UsersMainListModel implements _UsersMainListModel {
 
   @override
   String toString() {
-    return 'UsersMainModel(users: $users)';
+    return 'UsersListModel(users: $users)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UsersMainListModel &&
+            other is _$_UsersListModel &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
 
@@ -129,30 +130,29 @@ class _$_UsersMainListModel implements _UsersMainListModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_UsersMainListModelCopyWith<_$_UsersMainListModel> get copyWith =>
-      __$$_UsersMainListModelCopyWithImpl<_$_UsersMainListModel>(
-          this, _$identity);
+  _$$_UsersListModelCopyWith<_$_UsersListModel> get copyWith =>
+      __$$_UsersListModelCopyWithImpl<_$_UsersListModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UsersMainListModelToJson(
+    return _$$_UsersListModelToJson(
       this,
     );
   }
 }
 
-abstract class _UsersMainListModel implements UsersMainModel {
-  const factory _UsersMainListModel({final List<UserModel>? users}) =
-      _$_UsersMainListModel;
+abstract class _UsersListModel implements UsersListModel {
+  const factory _UsersListModel({required final List<UserModel>? users}) =
+      _$_UsersListModel;
 
-  factory _UsersMainListModel.fromJson(Map<String, dynamic> json) =
-      _$_UsersMainListModel.fromJson;
+  factory _UsersListModel.fromJson(Map<String, dynamic> json) =
+      _$_UsersListModel.fromJson;
 
   @override
   List<UserModel>? get users;
   @override
   @JsonKey(ignore: true)
-  _$$_UsersMainListModelCopyWith<_$_UsersMainListModel> get copyWith =>
+  _$$_UsersListModelCopyWith<_$_UsersListModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -166,10 +166,10 @@ mixin _$UserModel {
   String get name => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  Address? get address => throw _privateConstructorUsedError;
+  AddressModel? get address => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   String? get website => throw _privateConstructorUsedError;
-  Company? get company => throw _privateConstructorUsedError;
+  CompanyModel? get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -186,13 +186,13 @@ abstract class $UserModelCopyWith<$Res> {
       String name,
       String username,
       String email,
-      Address? address,
+      AddressModel? address,
       String phone,
       String? website,
-      Company? company});
+      CompanyModel? company});
 
-  $AddressCopyWith<$Res>? get address;
-  $CompanyCopyWith<$Res>? get company;
+  $AddressModelCopyWith<$Res>? get address;
+  $CompanyModelCopyWith<$Res>? get company;
 }
 
 /// @nodoc
@@ -234,7 +234,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
+              as AddressModel?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -246,28 +246,28 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       company: company == freezed
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as Company?,
+              as CompanyModel?,
     ));
   }
 
   @override
-  $AddressCopyWith<$Res>? get address {
+  $AddressModelCopyWith<$Res>? get address {
     if (_value.address == null) {
       return null;
     }
 
-    return $AddressCopyWith<$Res>(_value.address!, (value) {
+    return $AddressModelCopyWith<$Res>(_value.address!, (value) {
       return _then(_value.copyWith(address: value));
     });
   }
 
   @override
-  $CompanyCopyWith<$Res>? get company {
+  $CompanyModelCopyWith<$Res>? get company {
     if (_value.company == null) {
       return null;
     }
 
-    return $CompanyCopyWith<$Res>(_value.company!, (value) {
+    return $CompanyModelCopyWith<$Res>(_value.company!, (value) {
       return _then(_value.copyWith(company: value));
     });
   }
@@ -284,15 +284,15 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       String name,
       String username,
       String email,
-      Address? address,
+      AddressModel? address,
       String phone,
       String? website,
-      Company? company});
+      CompanyModel? company});
 
   @override
-  $AddressCopyWith<$Res>? get address;
+  $AddressModelCopyWith<$Res>? get address;
   @override
-  $CompanyCopyWith<$Res>? get company;
+  $CompanyModelCopyWith<$Res>? get company;
 }
 
 /// @nodoc
@@ -336,7 +336,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
+              as AddressModel?,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -348,7 +348,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       company: company == freezed
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as Company?,
+              as CompanyModel?,
     ));
   }
 }
@@ -378,13 +378,13 @@ class _$_UserModel implements _UserModel {
   @override
   final String email;
   @override
-  final Address? address;
+  final AddressModel? address;
   @override
   final String phone;
   @override
   final String? website;
   @override
-  final Company? company;
+  final CompanyModel? company;
 
   @override
   String toString() {
@@ -438,10 +438,10 @@ abstract class _UserModel implements UserModel {
       required final String name,
       required final String username,
       required final String email,
-      final Address? address,
+      final AddressModel? address,
       required final String phone,
       final String? website,
-      final Company? company}) = _$_UserModel;
+      final CompanyModel? company}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
@@ -455,57 +455,59 @@ abstract class _UserModel implements UserModel {
   @override
   String get email;
   @override
-  Address? get address;
+  AddressModel? get address;
   @override
   String get phone;
   @override
   String? get website;
   @override
-  Company? get company;
+  CompanyModel? get company;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Address _$AddressFromJson(Map<String, dynamic> json) {
-  return _Address.fromJson(json);
+AddressModel _$AddressModelFromJson(Map<String, dynamic> json) {
+  return _AddressModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Address {
+mixin _$AddressModel {
   String? get street => throw _privateConstructorUsedError;
   String? get suite => throw _privateConstructorUsedError;
   String? get city => throw _privateConstructorUsedError;
   String? get zipcode => throw _privateConstructorUsedError;
-  Geolocation? get geolocation => throw _privateConstructorUsedError;
+  GeolocationModel? get geo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AddressCopyWith<Address> get copyWith => throw _privateConstructorUsedError;
+  $AddressModelCopyWith<AddressModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddressCopyWith<$Res> {
-  factory $AddressCopyWith(Address value, $Res Function(Address) then) =
-      _$AddressCopyWithImpl<$Res>;
+abstract class $AddressModelCopyWith<$Res> {
+  factory $AddressModelCopyWith(
+          AddressModel value, $Res Function(AddressModel) then) =
+      _$AddressModelCopyWithImpl<$Res>;
   $Res call(
       {String? street,
       String? suite,
       String? city,
       String? zipcode,
-      Geolocation? geolocation});
+      GeolocationModel? geo});
 
-  $GeolocationCopyWith<$Res>? get geolocation;
+  $GeolocationModelCopyWith<$Res>? get geo;
 }
 
 /// @nodoc
-class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
-  _$AddressCopyWithImpl(this._value, this._then);
+class _$AddressModelCopyWithImpl<$Res> implements $AddressModelCopyWith<$Res> {
+  _$AddressModelCopyWithImpl(this._value, this._then);
 
-  final Address _value;
+  final AddressModel _value;
   // ignore: unused_field
-  final $Res Function(Address) _then;
+  final $Res Function(AddressModel) _then;
 
   @override
   $Res call({
@@ -513,7 +515,7 @@ class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
     Object? suite = freezed,
     Object? city = freezed,
     Object? zipcode = freezed,
-    Object? geolocation = freezed,
+    Object? geo = freezed,
   }) {
     return _then(_value.copyWith(
       street: street == freezed
@@ -532,50 +534,53 @@ class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
           ? _value.zipcode
           : zipcode // ignore: cast_nullable_to_non_nullable
               as String?,
-      geolocation: geolocation == freezed
-          ? _value.geolocation
-          : geolocation // ignore: cast_nullable_to_non_nullable
-              as Geolocation?,
+      geo: geo == freezed
+          ? _value.geo
+          : geo // ignore: cast_nullable_to_non_nullable
+              as GeolocationModel?,
     ));
   }
 
   @override
-  $GeolocationCopyWith<$Res>? get geolocation {
-    if (_value.geolocation == null) {
+  $GeolocationModelCopyWith<$Res>? get geo {
+    if (_value.geo == null) {
       return null;
     }
 
-    return $GeolocationCopyWith<$Res>(_value.geolocation!, (value) {
-      return _then(_value.copyWith(geolocation: value));
+    return $GeolocationModelCopyWith<$Res>(_value.geo!, (value) {
+      return _then(_value.copyWith(geo: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
-  factory _$$_AddressCopyWith(
-          _$_Address value, $Res Function(_$_Address) then) =
-      __$$_AddressCopyWithImpl<$Res>;
+abstract class _$$_AddressModelCopyWith<$Res>
+    implements $AddressModelCopyWith<$Res> {
+  factory _$$_AddressModelCopyWith(
+          _$_AddressModel value, $Res Function(_$_AddressModel) then) =
+      __$$_AddressModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? street,
       String? suite,
       String? city,
       String? zipcode,
-      Geolocation? geolocation});
+      GeolocationModel? geo});
 
   @override
-  $GeolocationCopyWith<$Res>? get geolocation;
+  $GeolocationModelCopyWith<$Res>? get geo;
 }
 
 /// @nodoc
-class __$$_AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
-    implements _$$_AddressCopyWith<$Res> {
-  __$$_AddressCopyWithImpl(_$_Address _value, $Res Function(_$_Address) _then)
-      : super(_value, (v) => _then(v as _$_Address));
+class __$$_AddressModelCopyWithImpl<$Res>
+    extends _$AddressModelCopyWithImpl<$Res>
+    implements _$$_AddressModelCopyWith<$Res> {
+  __$$_AddressModelCopyWithImpl(
+      _$_AddressModel _value, $Res Function(_$_AddressModel) _then)
+      : super(_value, (v) => _then(v as _$_AddressModel));
 
   @override
-  _$_Address get _value => super._value as _$_Address;
+  _$_AddressModel get _value => super._value as _$_AddressModel;
 
   @override
   $Res call({
@@ -583,9 +588,9 @@ class __$$_AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
     Object? suite = freezed,
     Object? city = freezed,
     Object? zipcode = freezed,
-    Object? geolocation = freezed,
+    Object? geo = freezed,
   }) {
-    return _then(_$_Address(
+    return _then(_$_AddressModel(
       street: street == freezed
           ? _value.street
           : street // ignore: cast_nullable_to_non_nullable
@@ -602,22 +607,22 @@ class __$$_AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
           ? _value.zipcode
           : zipcode // ignore: cast_nullable_to_non_nullable
               as String?,
-      geolocation: geolocation == freezed
-          ? _value.geolocation
-          : geolocation // ignore: cast_nullable_to_non_nullable
-              as Geolocation?,
+      geo: geo == freezed
+          ? _value.geo
+          : geo // ignore: cast_nullable_to_non_nullable
+              as GeolocationModel?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_Address implements _Address {
-  const _$_Address(
-      {this.street, this.suite, this.city, this.zipcode, this.geolocation});
+class _$_AddressModel implements _AddressModel {
+  const _$_AddressModel(
+      {this.street, this.suite, this.city, this.zipcode, this.geo});
 
-  factory _$_Address.fromJson(Map<String, dynamic> json) =>
-      _$$_AddressFromJson(json);
+  factory _$_AddressModel.fromJson(Map<String, dynamic> json) =>
+      _$$_AddressModelFromJson(json);
 
   @override
   final String? street;
@@ -628,24 +633,23 @@ class _$_Address implements _Address {
   @override
   final String? zipcode;
   @override
-  final Geolocation? geolocation;
+  final GeolocationModel? geo;
 
   @override
   String toString() {
-    return 'Address(street: $street, suite: $suite, city: $city, zipcode: $zipcode, geolocation: $geolocation)';
+    return 'AddressModel(street: $street, suite: $suite, city: $city, zipcode: $zipcode, geo: $geo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Address &&
+            other is _$_AddressModel &&
             const DeepCollectionEquality().equals(other.street, street) &&
             const DeepCollectionEquality().equals(other.suite, suite) &&
             const DeepCollectionEquality().equals(other.city, city) &&
             const DeepCollectionEquality().equals(other.zipcode, zipcode) &&
-            const DeepCollectionEquality()
-                .equals(other.geolocation, geolocation));
+            const DeepCollectionEquality().equals(other.geo, geo));
   }
 
   @JsonKey(ignore: true)
@@ -656,30 +660,31 @@ class _$_Address implements _Address {
       const DeepCollectionEquality().hash(suite),
       const DeepCollectionEquality().hash(city),
       const DeepCollectionEquality().hash(zipcode),
-      const DeepCollectionEquality().hash(geolocation));
+      const DeepCollectionEquality().hash(geo));
 
   @JsonKey(ignore: true)
   @override
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
-      __$$_AddressCopyWithImpl<_$_Address>(this, _$identity);
+  _$$_AddressModelCopyWith<_$_AddressModel> get copyWith =>
+      __$$_AddressModelCopyWithImpl<_$_AddressModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddressToJson(
+    return _$$_AddressModelToJson(
       this,
     );
   }
 }
 
-abstract class _Address implements Address {
-  const factory _Address(
+abstract class _AddressModel implements AddressModel {
+  const factory _AddressModel(
       {final String? street,
       final String? suite,
       final String? city,
       final String? zipcode,
-      final Geolocation? geolocation}) = _$_Address;
+      final GeolocationModel? geo}) = _$_AddressModel;
 
-  factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
+  factory _AddressModel.fromJson(Map<String, dynamic> json) =
+      _$_AddressModel.fromJson;
 
   @override
   String? get street;
@@ -690,42 +695,44 @@ abstract class _Address implements Address {
   @override
   String? get zipcode;
   @override
-  Geolocation? get geolocation;
+  GeolocationModel? get geo;
   @override
   @JsonKey(ignore: true)
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
+  _$$_AddressModelCopyWith<_$_AddressModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Company _$CompanyFromJson(Map<String, dynamic> json) {
-  return _Company.fromJson(json);
+CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) {
+  return _CompanyModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Company {
+mixin _$CompanyModel {
   String? get name => throw _privateConstructorUsedError;
   String? get catchPhrase => throw _privateConstructorUsedError;
   String? get bs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CompanyCopyWith<Company> get copyWith => throw _privateConstructorUsedError;
+  $CompanyModelCopyWith<CompanyModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CompanyCopyWith<$Res> {
-  factory $CompanyCopyWith(Company value, $Res Function(Company) then) =
-      _$CompanyCopyWithImpl<$Res>;
+abstract class $CompanyModelCopyWith<$Res> {
+  factory $CompanyModelCopyWith(
+          CompanyModel value, $Res Function(CompanyModel) then) =
+      _$CompanyModelCopyWithImpl<$Res>;
   $Res call({String? name, String? catchPhrase, String? bs});
 }
 
 /// @nodoc
-class _$CompanyCopyWithImpl<$Res> implements $CompanyCopyWith<$Res> {
-  _$CompanyCopyWithImpl(this._value, this._then);
+class _$CompanyModelCopyWithImpl<$Res> implements $CompanyModelCopyWith<$Res> {
+  _$CompanyModelCopyWithImpl(this._value, this._then);
 
-  final Company _value;
+  final CompanyModel _value;
   // ignore: unused_field
-  final $Res Function(Company) _then;
+  final $Res Function(CompanyModel) _then;
 
   @override
   $Res call({
@@ -751,22 +758,25 @@ class _$CompanyCopyWithImpl<$Res> implements $CompanyCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_CompanyCopyWith<$Res> implements $CompanyCopyWith<$Res> {
-  factory _$$_CompanyCopyWith(
-          _$_Company value, $Res Function(_$_Company) then) =
-      __$$_CompanyCopyWithImpl<$Res>;
+abstract class _$$_CompanyModelCopyWith<$Res>
+    implements $CompanyModelCopyWith<$Res> {
+  factory _$$_CompanyModelCopyWith(
+          _$_CompanyModel value, $Res Function(_$_CompanyModel) then) =
+      __$$_CompanyModelCopyWithImpl<$Res>;
   @override
   $Res call({String? name, String? catchPhrase, String? bs});
 }
 
 /// @nodoc
-class __$$_CompanyCopyWithImpl<$Res> extends _$CompanyCopyWithImpl<$Res>
-    implements _$$_CompanyCopyWith<$Res> {
-  __$$_CompanyCopyWithImpl(_$_Company _value, $Res Function(_$_Company) _then)
-      : super(_value, (v) => _then(v as _$_Company));
+class __$$_CompanyModelCopyWithImpl<$Res>
+    extends _$CompanyModelCopyWithImpl<$Res>
+    implements _$$_CompanyModelCopyWith<$Res> {
+  __$$_CompanyModelCopyWithImpl(
+      _$_CompanyModel _value, $Res Function(_$_CompanyModel) _then)
+      : super(_value, (v) => _then(v as _$_CompanyModel));
 
   @override
-  _$_Company get _value => super._value as _$_Company;
+  _$_CompanyModel get _value => super._value as _$_CompanyModel;
 
   @override
   $Res call({
@@ -774,7 +784,7 @@ class __$$_CompanyCopyWithImpl<$Res> extends _$CompanyCopyWithImpl<$Res>
     Object? catchPhrase = freezed,
     Object? bs = freezed,
   }) {
-    return _then(_$_Company(
+    return _then(_$_CompanyModel(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -793,11 +803,11 @@ class __$$_CompanyCopyWithImpl<$Res> extends _$CompanyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Company implements _Company {
-  const _$_Company({this.name, this.catchPhrase, this.bs});
+class _$_CompanyModel implements _CompanyModel {
+  const _$_CompanyModel({this.name, this.catchPhrase, this.bs});
 
-  factory _$_Company.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyFromJson(json);
+  factory _$_CompanyModel.fromJson(Map<String, dynamic> json) =>
+      _$$_CompanyModelFromJson(json);
 
   @override
   final String? name;
@@ -808,14 +818,14 @@ class _$_Company implements _Company {
 
   @override
   String toString() {
-    return 'Company(name: $name, catchPhrase: $catchPhrase, bs: $bs)';
+    return 'CompanyModel(name: $name, catchPhrase: $catchPhrase, bs: $bs)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Company &&
+            other is _$_CompanyModel &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.catchPhrase, catchPhrase) &&
@@ -832,24 +842,25 @@ class _$_Company implements _Company {
 
   @JsonKey(ignore: true)
   @override
-  _$$_CompanyCopyWith<_$_Company> get copyWith =>
-      __$$_CompanyCopyWithImpl<_$_Company>(this, _$identity);
+  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
+      __$$_CompanyModelCopyWithImpl<_$_CompanyModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompanyToJson(
+    return _$$_CompanyModelToJson(
       this,
     );
   }
 }
 
-abstract class _Company implements Company {
-  const factory _Company(
+abstract class _CompanyModel implements CompanyModel {
+  const factory _CompanyModel(
       {final String? name,
       final String? catchPhrase,
-      final String? bs}) = _$_Company;
+      final String? bs}) = _$_CompanyModel;
 
-  factory _Company.fromJson(Map<String, dynamic> json) = _$_Company.fromJson;
+  factory _CompanyModel.fromJson(Map<String, dynamic> json) =
+      _$_CompanyModel.fromJson;
 
   @override
   String? get name;
@@ -859,40 +870,41 @@ abstract class _Company implements Company {
   String? get bs;
   @override
   @JsonKey(ignore: true)
-  _$$_CompanyCopyWith<_$_Company> get copyWith =>
+  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Geolocation _$GeolocationFromJson(Map<String, dynamic> json) {
-  return _Geolocation.fromJson(json);
+GeolocationModel _$GeolocationModelFromJson(Map<String, dynamic> json) {
+  return _GeolocationModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Geolocation {
+mixin _$GeolocationModel {
   String? get lat => throw _privateConstructorUsedError;
   String? get lng => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeolocationCopyWith<Geolocation> get copyWith =>
+  $GeolocationModelCopyWith<GeolocationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GeolocationCopyWith<$Res> {
-  factory $GeolocationCopyWith(
-          Geolocation value, $Res Function(Geolocation) then) =
-      _$GeolocationCopyWithImpl<$Res>;
+abstract class $GeolocationModelCopyWith<$Res> {
+  factory $GeolocationModelCopyWith(
+          GeolocationModel value, $Res Function(GeolocationModel) then) =
+      _$GeolocationModelCopyWithImpl<$Res>;
   $Res call({String? lat, String? lng});
 }
 
 /// @nodoc
-class _$GeolocationCopyWithImpl<$Res> implements $GeolocationCopyWith<$Res> {
-  _$GeolocationCopyWithImpl(this._value, this._then);
+class _$GeolocationModelCopyWithImpl<$Res>
+    implements $GeolocationModelCopyWith<$Res> {
+  _$GeolocationModelCopyWithImpl(this._value, this._then);
 
-  final Geolocation _value;
+  final GeolocationModel _value;
   // ignore: unused_field
-  final $Res Function(Geolocation) _then;
+  final $Res Function(GeolocationModel) _then;
 
   @override
   $Res call({
@@ -913,31 +925,32 @@ class _$GeolocationCopyWithImpl<$Res> implements $GeolocationCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_GeolocationCopyWith<$Res>
-    implements $GeolocationCopyWith<$Res> {
-  factory _$$_GeolocationCopyWith(
-          _$_Geolocation value, $Res Function(_$_Geolocation) then) =
-      __$$_GeolocationCopyWithImpl<$Res>;
+abstract class _$$_GeolocationModelCopyWith<$Res>
+    implements $GeolocationModelCopyWith<$Res> {
+  factory _$$_GeolocationModelCopyWith(
+          _$_GeolocationModel value, $Res Function(_$_GeolocationModel) then) =
+      __$$_GeolocationModelCopyWithImpl<$Res>;
   @override
   $Res call({String? lat, String? lng});
 }
 
 /// @nodoc
-class __$$_GeolocationCopyWithImpl<$Res> extends _$GeolocationCopyWithImpl<$Res>
-    implements _$$_GeolocationCopyWith<$Res> {
-  __$$_GeolocationCopyWithImpl(
-      _$_Geolocation _value, $Res Function(_$_Geolocation) _then)
-      : super(_value, (v) => _then(v as _$_Geolocation));
+class __$$_GeolocationModelCopyWithImpl<$Res>
+    extends _$GeolocationModelCopyWithImpl<$Res>
+    implements _$$_GeolocationModelCopyWith<$Res> {
+  __$$_GeolocationModelCopyWithImpl(
+      _$_GeolocationModel _value, $Res Function(_$_GeolocationModel) _then)
+      : super(_value, (v) => _then(v as _$_GeolocationModel));
 
   @override
-  _$_Geolocation get _value => super._value as _$_Geolocation;
+  _$_GeolocationModel get _value => super._value as _$_GeolocationModel;
 
   @override
   $Res call({
     Object? lat = freezed,
     Object? lng = freezed,
   }) {
-    return _then(_$_Geolocation(
+    return _then(_$_GeolocationModel(
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -952,11 +965,11 @@ class __$$_GeolocationCopyWithImpl<$Res> extends _$GeolocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Geolocation implements _Geolocation {
-  const _$_Geolocation({this.lat, this.lng});
+class _$_GeolocationModel implements _GeolocationModel {
+  const _$_GeolocationModel({this.lat, this.lng});
 
-  factory _$_Geolocation.fromJson(Map<String, dynamic> json) =>
-      _$$_GeolocationFromJson(json);
+  factory _$_GeolocationModel.fromJson(Map<String, dynamic> json) =>
+      _$$_GeolocationModelFromJson(json);
 
   @override
   final String? lat;
@@ -965,14 +978,14 @@ class _$_Geolocation implements _Geolocation {
 
   @override
   String toString() {
-    return 'Geolocation(lat: $lat, lng: $lng)';
+    return 'GeolocationModel(lat: $lat, lng: $lng)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Geolocation &&
+            other is _$_GeolocationModel &&
             const DeepCollectionEquality().equals(other.lat, lat) &&
             const DeepCollectionEquality().equals(other.lng, lng));
   }
@@ -986,23 +999,23 @@ class _$_Geolocation implements _Geolocation {
 
   @JsonKey(ignore: true)
   @override
-  _$$_GeolocationCopyWith<_$_Geolocation> get copyWith =>
-      __$$_GeolocationCopyWithImpl<_$_Geolocation>(this, _$identity);
+  _$$_GeolocationModelCopyWith<_$_GeolocationModel> get copyWith =>
+      __$$_GeolocationModelCopyWithImpl<_$_GeolocationModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GeolocationToJson(
+    return _$$_GeolocationModelToJson(
       this,
     );
   }
 }
 
-abstract class _Geolocation implements Geolocation {
-  const factory _Geolocation({final String? lat, final String? lng}) =
-      _$_Geolocation;
+abstract class _GeolocationModel implements GeolocationModel {
+  const factory _GeolocationModel({final String? lat, final String? lng}) =
+      _$_GeolocationModel;
 
-  factory _Geolocation.fromJson(Map<String, dynamic> json) =
-      _$_Geolocation.fromJson;
+  factory _GeolocationModel.fromJson(Map<String, dynamic> json) =
+      _$_GeolocationModel.fromJson;
 
   @override
   String? get lat;
@@ -1010,6 +1023,6 @@ abstract class _Geolocation implements Geolocation {
   String? get lng;
   @override
   @JsonKey(ignore: true)
-  _$$_GeolocationCopyWith<_$_Geolocation> get copyWith =>
+  _$$_GeolocationModelCopyWith<_$_GeolocationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

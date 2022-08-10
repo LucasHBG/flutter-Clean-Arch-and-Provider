@@ -2,22 +2,20 @@
 
 // ignore_for_file: non_constant_identifier_names
 
-part of 'users_main_model.dart';
+part of 'users_list_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UsersMainListModel _$$_UsersMainListModelFromJson(
-        Map<String, dynamic> json) =>
-    _$_UsersMainListModel(
+_$_UsersListModel _$$_UsersListModelFromJson(Map<String, dynamic> json) =>
+    _$_UsersListModel(
       users: (json['users'] as List<dynamic>?)
           ?.map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_UsersMainListModelToJson(
-        _$_UsersMainListModel instance) =>
+Map<String, dynamic> _$$_UsersListModelToJson(_$_UsersListModel instance) =>
     <String, dynamic>{
       'users': instance.users,
     };
@@ -29,12 +27,12 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       email: json['email'] as String,
       address: json['address'] == null
           ? null
-          : Address.fromJson(json['address'] as Map<String, dynamic>),
+          : AddressModel.fromJson(json['address'] as Map<String, dynamic>),
       phone: json['phone'] as String,
       website: json['website'] as String?,
       company: json['company'] == null
           ? null
-          : Company.fromJson(json['company'] as Map<String, dynamic>),
+          : CompanyModel.fromJson(json['company'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
@@ -49,45 +47,47 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
       'company': instance.company,
     };
 
-_$_Address _$$_AddressFromJson(Map<String, dynamic> json) => _$_Address(
+_$_AddressModel _$$_AddressModelFromJson(Map<String, dynamic> json) =>
+    _$_AddressModel(
       street: json['street'] as String?,
       suite: json['suite'] as String?,
       city: json['city'] as String?,
       zipcode: json['zipcode'] as String?,
-      geolocation: json['geolocation'] == null
+      geo: json['geo'] == null
           ? null
-          : Geolocation.fromJson(json['geolocation'] as Map<String, dynamic>),
+          : GeolocationModel.fromJson(json['geo'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AddressToJson(_$_Address instance) =>
+Map<String, dynamic> _$$_AddressModelToJson(_$_AddressModel instance) =>
     <String, dynamic>{
       'street': instance.street,
       'suite': instance.suite,
       'city': instance.city,
       'zipcode': instance.zipcode,
-      'geolocation': instance.geolocation,
+      'geo': instance.geo,
     };
 
-_$_Company _$$_CompanyFromJson(Map<String, dynamic> json) => _$_Company(
+_$_CompanyModel _$$_CompanyModelFromJson(Map<String, dynamic> json) =>
+    _$_CompanyModel(
       name: json['name'] as String?,
       catchPhrase: json['catchPhrase'] as String?,
       bs: json['bs'] as String?,
     );
 
-Map<String, dynamic> _$$_CompanyToJson(_$_Company instance) =>
+Map<String, dynamic> _$$_CompanyModelToJson(_$_CompanyModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'catchPhrase': instance.catchPhrase,
       'bs': instance.bs,
     };
 
-_$_Geolocation _$$_GeolocationFromJson(Map<String, dynamic> json) =>
-    _$_Geolocation(
+_$_GeolocationModel _$$_GeolocationModelFromJson(Map<String, dynamic> json) =>
+    _$_GeolocationModel(
       lat: json['lat'] as String?,
       lng: json['lng'] as String?,
     );
 
-Map<String, dynamic> _$$_GeolocationToJson(_$_Geolocation instance) =>
+Map<String, dynamic> _$$_GeolocationModelToJson(_$_GeolocationModel instance) =>
     <String, dynamic>{
       'lat': instance.lat,
       'lng': instance.lng,
