@@ -3,10 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:test_app/models/users_list/users_list_model.dart';
 
 import '../data/remote/response/status.dart';
-import '../view_models/user_view_model.dart';
+import '../view_models/users_list_vm.dart';
 import 'widgets/my_error_widget.dart';
 import 'widgets/my_loading_widget.dart';
 
+/// This page was created with the solely purpose of using Provider
 class UserListMgmtPage extends StatefulWidget {
   const UserListMgmtPage({Key? key}) : super(key: key);
 
@@ -53,22 +54,26 @@ class _UserListMgmtPageState extends State<UserListMgmtPage> {
       ),
     );
   }
-}
 
-Widget _getUsersListView(List<UserModel>? usersList) {
-  return ListView.builder(
-    itemCount: usersList?.length,
-    itemBuilder: (context, int index) {
-      return _getUserListItem(usersList![index]);
-    },
-  );
-}
+  Widget _getUsersListView(List<UserModel>? usersList) {
+    return ListView.builder(
+      itemCount: usersList?.length,
+      itemBuilder: (context, int index) {
+        return _getUserListItem(usersList![index]);
+      },
+    );
+  }
 
-Widget _getUserListItem(UserModel user) {
-  return Card(
-    child: ListTile(
-      title: Text(user.name),
-      subtitle: Text(user.email),
-    ),
-  );
-}
+  Widget _getUserListItem(UserModel user) {
+    return Card(
+      child: ListTile(
+        title: Text(user.name),
+        subtitle: Text(user.email),
+        trailing: IconButton(
+          onPressed: () => {},
+          icon: const Icon(Icons.delete),
+        ),
+      ),
+    );
+  }
+} // end of class
