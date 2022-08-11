@@ -22,14 +22,29 @@ class UserRepositoryImp implements UserRepository {
       dynamic jsonString =
           await _baseApiService.getResponse(ApiEndpoints().getUsers);
 
-      debugPrint("If successfull: $jsonString");
+      debugPrint("[GET] If successfull: $jsonString");
 
       /// Here we're parsing the result (List of json Objects of type User)
       /// into a List<dynamic>
       final jsonResponse = UsersListModel.fromJson({'users': jsonString});
       return jsonResponse;
     } catch (e) {
-      debugPrint("[Exception] if fail: $e}");
+      debugPrint("[GET Exception] on fail: $e}");
+      rethrow;
+    }
+  }
+
+  @override
+  Future<String> deleteUserById(int id) async {
+    try {
+      dynamic jsonString = await _baseApiService
+          .deleteResponse(ApiEndpoints().deleteUserById + id.toString());
+
+      debugPrint("[DELETE] If successfull: $jsonString");
+
+      return "User with id: $id was deleted successfully";
+    } catch (e) {
+      debugPrint("[DELETE Exception] on fail: $e");
       rethrow;
     }
   }
