@@ -4,4 +4,6 @@ abstract class BaseApiService {
 
   ///Method to be implemented by extended classes
   Future<dynamic> getResponse(String url);
+
+  Future<dynamic> deleteResponse(String url);
 }

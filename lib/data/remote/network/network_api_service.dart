@@ -8,19 +8,6 @@ import 'package:test_app/data/remote/network/base_api_service.dart';
 //TODO: add all requests type like POST, PUT and DELETE
 //Generalistic class to handle all Responses from app requests
 class NetworkApiService extends BaseApiService {
-  @override
-  Future getResponse(String url) async {
-    dynamic responseJson;
-
-    try {
-      final response = await http.get(Uri.parse(baseUrl + url));
-      responseJson = returnResponse(response);
-    } on SocketException {
-      throw FetchDataException('No Internet Connection');
-    }
-    return responseJson;
-  }
-
   dynamic returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
@@ -38,5 +25,31 @@ class NetworkApiService extends BaseApiService {
         throw FetchDataException(
             'Error occured while communicating with server!\nStatus code: ${response.statusCode}');
     }
+  }
+
+  @override
+  Future getResponse(String url) async {
+    dynamic responseJson;
+
+    try {
+      final response = await http.get(Uri.parse(baseUrl + url));
+      responseJson = returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet Connection');
+    }
+    return responseJson;
+  }
+
+  @override
+  Future deleteResponse(String url) async {
+    dynamic responseJson;
+
+    try {
+      final response = await http.delete(Uri.parse(baseUrl + url));
+      responseJson = returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet Connection');
+    }
+    return responseJson;
   }
 }
