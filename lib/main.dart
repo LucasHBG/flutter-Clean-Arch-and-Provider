@@ -10,7 +10,7 @@ import 'res/colors/app_colors.dart';
 import 'view/home_page.dart';
 import 'view/login_page.dart';
 import 'view/user_list_mgmt_page.dart';
-import 'view_models/user_view_model.dart';
+import 'view_models/users_list_vm.dart';
 
 Future<void> main() async {
   final router = GoRouter(
