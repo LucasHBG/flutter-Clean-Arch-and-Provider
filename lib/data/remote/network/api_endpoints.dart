@@ -4,4 +4,6 @@ class ApiEndpoints {
 
   ///Get User by *id*
   // final String getUserById = "/users/";
+
+  final String deleteUserById = "/users/";
 }
