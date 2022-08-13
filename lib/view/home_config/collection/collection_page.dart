@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class YourLibraryPage extends StatelessWidget {
-  const YourLibraryPage({Key? key}) : super(key: key);
+class CollectionPage extends StatelessWidget {
+  const CollectionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
