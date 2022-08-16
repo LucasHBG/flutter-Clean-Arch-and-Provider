@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:test_app/view_models/login_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -58,7 +60,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text('Esqueci a senha'),
                   ),
                   ElevatedButton(
-                    onPressed: () => GoRouter.of(context).go('/home'),
+                    onPressed: () {
+                      // TODO: Add auth class
+                      context.read<LoginState>().loggedIn = true;
+                      context.go('/home');
+                    },
                     child: const Text('Entrar'),
                   ),
                 ],
