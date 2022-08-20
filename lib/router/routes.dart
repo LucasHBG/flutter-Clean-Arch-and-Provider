@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_app/res/constants/route_names.dart';
+import 'package:test_app/view/home_config/home/notifications/notifications_page.dart';
 import 'package:test_app/view_models/login_state.dart';
 
 import '../view/create_account_page.dart';
@@ -57,6 +58,17 @@ class MyRouter {
         path: '/home',
         redirect: (state) =>
             state.namedLocation(homeRouteName, params: {'tab': 'home'}),
+        routes: [
+          GoRoute(
+              name: notificationsRouteName,
+              path: 'notifications',
+              pageBuilder: (context, state) {
+                return MaterialPage<void>(
+                  key: state.pageKey,
+                  child: const NotificationsPage(),
+                );
+              }),
+        ],
       ),
       GoRoute(
         path: '/search',
