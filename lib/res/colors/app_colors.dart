@@ -1,4 +1,4 @@
-import 'package:flutter/src/material/colors.dart';
+import 'package:flutter/src/material/colors.dart' show Colors, MaterialColor;
 import 'dart:ui';
 
 import 'package:test_app/res/colors/base_colors.dart';
@@ -57,7 +57,7 @@ class AppColors implements BaseColors {
   };
 
   //Theme color
-
+  
   @override
   MaterialColor get colorPrimary => MaterialColor(0xffff79c6, _primary);
 
@@ -86,7 +86,7 @@ class AppColors implements BaseColors {
   //Chips color
 
   @override
-  Color get catChipColor => Colors.indigoAccent;
+  Color get catChipColor => const Color(0xff414558);
 
   @override
   Color get castChipColor => Colors.deepOrangeAccent;
