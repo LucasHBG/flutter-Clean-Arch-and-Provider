@@ -3,51 +3,20 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'res/colors/app_colors.dart';
-import 'view/home_page.dart';
-import 'view/login_page.dart';
-import 'view/user_list_mgmt_page.dart';
+import '/router/routes.dart';
+import '/view_models/login_state.dart';
+import 'res/app_context_extension.dart';
 import 'view_models/users_list_vm.dart';
 
 Future<void> main() async {
-  final router = GoRouter(
-    initialLocation: '/home',
-    routes: [
-      GoRoute(
-        path: '/login',
-        pageBuilder: (context, state) => MaterialPage(
-          key: state.pageKey,
-          child: const LoginPage(),
-        ),
-      ),
-      GoRoute(
-        path: '/home',
-        pageBuilder: (context, state) => MaterialPage(
-          key: state.pageKey,
-          child: const HomePage(),
-        ),
-      ),
-      GoRoute(
-        path: '/user-list-mgmt',
-        pageBuilder: (context, state) => MaterialPage(
-          key: state.pageKey,
-          child: const UserListMgmtPage(),
-        ),
-      )
-    ],
-    //Handle all errors related to a route that dont exists
-    errorPageBuilder: (context, state) => MaterialPage(
-      key: state.pageKey,
-      child: Scaffold(
-        body: Center(child: Text(state.error.toString())),
-      ),
-    ),
-  );
-
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// Get instance of LoginState class
+  final state = LoginState(await SharedPreferences.getInstance());
+  state.checkLoggedIn();
 
   runZonedGuarded<Future<void>>(
     () async {
@@ -55,23 +24,7 @@ Future<void> main() async {
         [DeviceOrientation.portraitUp],
       );
 
-      runApp(
-        MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (context) => UsersListVM()),
-          ],
-          child: MaterialApp.router(
-            routeInformationParser: router.routeInformationParser,
-            routerDelegate: router.routerDelegate,
-            routeInformationProvider: router.routeInformationProvider,
-            debugShowCheckedModeBanner: false,
-            themeMode: ThemeMode.dark,
-            theme: ThemeData(
-              backgroundColor: AppColors().colorBackground,
-            ),
-          ),
-        ),
-      );
+      runApp(MyApp(loginState: state));
     },
     (error, stackTrace) async {
       //Verifies if your applications is in debug mode
@@ -97,4 +50,78 @@ Future<void> main() async {
       Zone.current.handleUncaughtError(exception, stackTrace!);
     }
   };
+}
+
+class MyApp extends StatelessWidget {
+  final LoginState loginState;
+
+  const MyApp({Key? key, required this.loginState}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        // Configuring login state and routes
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (BuildContext createContext) => loginState,
+        ),
+        Provider(
+          lazy: false,
+          create: (BuildContext createContext) => MyRouter(loginState),
+        ),
+
+        // Others routes to be configured
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (context) => UsersListVM(),
+        ),
+      ],
+      child: Builder(
+        builder: (BuildContext context) {
+          final router = Provider.of<MyRouter>(context, listen: false).router;
+          return MaterialApp.router(
+            routeInformationParser: router.routeInformationParser,
+            routerDelegate: router.routerDelegate,
+            routeInformationProvider: router.routeInformationProvider,
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              fontFamily: 'Roboto',
+              primarySwatch: context.resources.color.colorPrimary,
+              scaffoldBackgroundColor: context.resources.color.colorBackground,
+              backgroundColor: context.resources.color.colorBackground,
+              canvasColor: context.resources.color.colorBackground,
+              navigationBarTheme: NavigationBarThemeData(
+                backgroundColor: context.resources.color.colorBackground,
+                // The color when the item is selected
+                indicatorColor: context.resources.color.colorNeutral,
+                iconTheme: MaterialStateProperty.resolveWith(
+                  (states) {
+                    if (states.contains(MaterialState.selected)) {
+                      return IconThemeData(
+                          color: context.resources.color.colorSecondary);
+                    }
+
+                    return IconThemeData(
+                        color: context.resources.color.colorSecondary);
+                  },
+                ),
+                labelTextStyle: MaterialStateProperty.resolveWith(
+                  (states) {
+                    if (states.contains(MaterialState.selected)) {
+                      return TextStyle(
+                          color: context.resources.color.colorSecondary);
+                    }
+
+                    return TextStyle(
+                        color: context.resources.color.colorSecondary);
+                  },
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
