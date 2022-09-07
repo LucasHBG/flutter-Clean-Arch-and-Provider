@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:test_app/res/constants/route_names.dart';
 import 'package:test_app/view_models/login_state.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,8 +21,9 @@ class HomePage extends StatelessWidget {
               const Text('Good Evening'),
               Row(
                 children: [
-                  const IconButton(
-                      onPressed: null, icon: Icon(Icons.notifications)),
+                  IconButton(
+                      onPressed: () => context.goNamed(notificationsRouteName),
+                      icon: const Icon(Icons.notifications)),
                   const IconButton(onPressed: null, icon: Icon(Icons.history)),
                   IconButton(
                       onPressed: () {
