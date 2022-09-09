@@ -24,7 +24,10 @@ class HomePage extends StatelessWidget {
                   IconButton(
                       onPressed: () => context.goNamed(notificationsRouteName),
                       icon: const Icon(Icons.notifications)),
-                  const IconButton(onPressed: null, icon: Icon(Icons.history)),
+                  IconButton(
+                      onPressed: () =>
+                          context.goNamed(recentlyPlayedHistoryRouteName),
+                      icon: const Icon(Icons.history)),
                   IconButton(
                       onPressed: () {
                         context.read<LoginState>().loggedIn = false;
