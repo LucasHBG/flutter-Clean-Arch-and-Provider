@@ -52,13 +52,6 @@ class MyRouter {
             child: HomeConfigPage(tab: tab),
           );
         },
-      ),
-
-      // forwarding routes to remove the need to put the 'tab' param in the code
-      GoRoute(
-        path: '/home',
-        redirect: (state) =>
-            state.namedLocation(homeRouteName, params: {'tab': 'home'}),
         routes: [
           GoRoute(
             name: notificationsRouteName,
@@ -81,6 +74,13 @@ class MyRouter {
             },
           ),
         ],
+      ),
+
+      // forwarding routes to remove the need to put the 'tab' param in the code
+      GoRoute(
+        path: '/home',
+        redirect: (state) =>
+            state.namedLocation(homeRouteName, params: {'tab': 'home'}),
       ),
       GoRoute(
         path: '/search',
