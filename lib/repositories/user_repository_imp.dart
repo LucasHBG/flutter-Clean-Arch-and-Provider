@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:test_app/data/remote/network/api_endpoints.dart';
-import 'package:test_app/data/remote/network/base_api_service.dart';
-import 'package:test_app/data/remote/network/network_api_service.dart';
-import 'package:test_app/models/users_list/users_list_model.dart';
-import 'package:test_app/repositories/user_repository.dart';
+
+import '/data/remote/network/api_endpoints.dart';
+import '/data/remote/network/base_api_service.dart';
+import '/data/remote/network/network_api_service.dart';
+import '/models/users_list/users_list_model.dart';
+import '/repositories/user_repository.dart';
 
 class UserRepositoryImp implements UserRepository {
   final BaseApiService _baseApiService = NetworkApiService();

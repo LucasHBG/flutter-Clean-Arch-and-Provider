@@ -1,4 +1,4 @@
-import 'package:test_app/data/remote/response/status.dart';
+import '/data/remote/response/status.dart';
 
 /// This is the generic response class for the API response
 /// with generic data and also has three states:

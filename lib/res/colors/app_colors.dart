@@ -1,7 +1,7 @@
 import 'package:flutter/src/material/colors.dart' show Colors, MaterialColor;
 import 'dart:ui';
 
-import 'package:test_app/res/colors/base_colors.dart';
+import '/res/colors/base_colors.dart';
 
 class AppColors implements BaseColors {
   final Map<int, Color> _primary = const {

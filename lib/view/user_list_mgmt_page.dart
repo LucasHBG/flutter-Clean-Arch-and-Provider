@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/models/users_list/users_list_model.dart';
 
-import '../data/remote/response/status.dart';
-import '../view_models/users_list_vm.dart';
+import '/data/remote/response/status.dart';
+import '/models/users_list/users_list_model.dart';
+import '/view_models/users_list_vm.dart';
 import 'widgets/my_error_widget.dart';
 import 'widgets/my_loading_widget.dart';
 

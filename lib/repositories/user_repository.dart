@@ -1,4 +1,4 @@
-import 'package:test_app/models/users_list/users_list_model.dart';
+import '/models/users_list/users_list_model.dart';
 
 ///Since there is no `Interface` type on Dart, the only
 ///way to implement a class as sush is by setting it as

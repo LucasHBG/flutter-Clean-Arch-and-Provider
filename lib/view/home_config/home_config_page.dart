@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:test_app/res/constants/route_names.dart';
 
+import '/res/constants/route_names.dart';
 import '/view/home_config/collection/collection_page.dart';
 import '/view/home_config/search/search_page.dart';
 import 'home/home_page.dart';

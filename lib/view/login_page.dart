@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/res/constants/route_names.dart';
-import 'package:test_app/view_models/login_state.dart';
+
+import '/res/constants/route_names.dart';
+import '/view_models/login_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

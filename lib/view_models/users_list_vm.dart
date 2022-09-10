@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:test_app/data/remote/response/api_response.dart';
-import 'package:test_app/models/users_list/users_list_model.dart';
-import 'package:test_app/repositories/user_repository_imp.dart';
+
+import '/data/remote/response/api_response.dart';
+import '/models/users_list/users_list_model.dart';
+import '/repositories/user_repository_imp.dart';
 
 class UsersListVM extends ChangeNotifier {
   final _userRepository = UserRepositoryImp();

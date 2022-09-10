@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:test_app/res/constants/route_names.dart';
+
+import '/res/constants/route_names.dart';
 
 class LoginState extends ChangeNotifier {
   final SharedPreferences preferences;

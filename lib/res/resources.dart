@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:test_app/res/colors/app_colors.dart';
+
+import '/res/colors/app_colors.dart';
 
 class Resources {
   final BuildContext _context;

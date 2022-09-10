@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:test_app/res/constants/route_names.dart';
-import 'package:test_app/view/home_config/home/notifications/notifications_page.dart';
-import 'package:test_app/view/home_config/home/recently_played_history/recently_played_history_page.dart';
-import 'package:test_app/view_models/login_state.dart';
 
-import '../view/create_account_page.dart';
-import '../view/home_config/home_config_page.dart';
-import '../view/login_page.dart';
-import '../view/user_list_mgmt_page.dart';
+import '/res/constants/route_names.dart';
+import '/view/create_account_page.dart';
+import '/view/home_config/home/notifications/notifications_page.dart';
+import '/view/home_config/home/recently_played_history/recently_played_history_page.dart';
+import '/view/home_config/home_config_page.dart';
+import '/view/login_page.dart';
+import '/view/user_list_mgmt_page.dart';
+import '/view_models/login_state.dart';
 
 class MyRouter {
   final LoginState loginState;
-
-  MyRouter(this.loginState);
 
   late final router = GoRouter(
     refreshListenable: loginState,
@@ -131,4 +129,6 @@ class MyRouter {
       return null;
     },
   );
+
+  MyRouter(this.loginState);
 }
