@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:test_app/res/constants/route_names.dart';
 import 'package:test_app/view_models/login_state.dart';
 
 class LoginPage extends StatefulWidget {
@@ -63,7 +64,6 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       // TODO: Add auth class
                       context.read<LoginState>().loggedIn = true;
-                      context.go('/home');
                     },
                     child: const Text('Entrar'),
                   ),
