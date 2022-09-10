@@ -22,11 +22,16 @@ class HomePage extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                      onPressed: () => context.goNamed(notificationsRouteName),
+                      onPressed: () => context.goNamed(
+                            notificationsRouteName,
+                            params: {'tab': 'home'},
+                          ),
                       icon: const Icon(Icons.notifications)),
                   IconButton(
-                      onPressed: () =>
-                          context.goNamed(recentlyPlayedHistoryRouteName),
+                      onPressed: () => context.goNamed(
+                            recentlyPlayedHistoryRouteName,
+                            params: {'tab': 'home'},
+                          ),
                       icon: const Icon(Icons.history)),
                   IconButton(
                       onPressed: () {
