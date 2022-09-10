@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_app/res/constants/route_names.dart';
 
 import '/view/home_config/collection/collection_page.dart';
 import '/view/home_config/search/search_page.dart';
@@ -57,15 +58,15 @@ class _HomeConfigPageState extends State<HomeConfigPage> {
               _selectedIndex = index;
               switch (index) {
                 case 0:
-                  context.go('/home');
+                  context.goNamed(homeRouteName);
                   break;
 
                 case 1:
-                  context.go('/search');
+                  context.goNamed(searchRouteName);
                   break;
 
                 case 2:
-                  context.go('/collection');
+                  context.goNamed(collectionRouteName);
                   break;
               }
             },
