@@ -85,43 +85,74 @@ class MyApp extends StatelessWidget {
             routerDelegate: router.routerDelegate,
             routeInformationProvider: router.routeInformationProvider,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              fontFamily: 'Roboto',
-              primarySwatch: context.resources.color.colorPrimary,
-              scaffoldBackgroundColor: context.resources.color.colorBackground,
-              backgroundColor: context.resources.color.colorBackground,
-              canvasColor: context.resources.color.colorBackground,
-              navigationBarTheme: NavigationBarThemeData(
-                backgroundColor: context.resources.color.colorBackground,
-                // The color when the item is selected
-                indicatorColor: context.resources.color.colorNeutral,
-                iconTheme: MaterialStateProperty.resolveWith(
-                  (states) {
-                    if (states.contains(MaterialState.selected)) {
-                      return IconThemeData(
-                          color: context.resources.color.colorSecondary);
-                    }
-
-                    return IconThemeData(
-                        color: context.resources.color.colorSecondary);
-                  },
-                ),
-                labelTextStyle: MaterialStateProperty.resolveWith(
-                  (states) {
-                    if (states.contains(MaterialState.selected)) {
-                      return TextStyle(
-                          color: context.resources.color.colorSecondary);
-                    }
-
-                    return TextStyle(
-                        color: context.resources.color.colorSecondary);
-                  },
-                ),
-              ),
-            ),
+            title: 'Clean Arch',
+            theme: themeConfiguration(context),
           );
         },
       ),
+    );
+  }
+
+  ThemeData themeConfiguration(BuildContext context) {
+    return ThemeData(
+      fontFamily: 'Roboto',
+      primarySwatch: context.resources.color.colorPrimary,
+      scaffoldBackgroundColor: context.resources.color.colorBackground,
+      backgroundColor: context.resources.color.colorBackground,
+      canvasColor: context.resources.color.colorBackground,
+      textTheme: TextTheme(
+        headlineLarge: TextStyle(color: context.resources.color.colorWhite),
+        headlineMedium: TextStyle(color: context.resources.color.colorWhite),
+        headlineSmall: TextStyle(color: context.resources.color.colorWhite),
+        bodyLarge: TextStyle(color: context.resources.color.colorWhite),
+        bodyMedium: TextStyle(color: context.resources.color.colorWhite),
+        bodySmall: TextStyle(
+            color: context.resources.color.colorWhite.withOpacity(0.7)),
+        displayLarge: TextStyle(color: context.resources.color.colorWhite),
+        displayMedium: TextStyle(color: context.resources.color.colorWhite),
+        displaySmall: TextStyle(
+            color: context.resources.color.colorWhite.withOpacity(0.7)),
+        titleLarge: TextStyle(color: context.resources.color.colorWhite),
+        titleMedium: TextStyle(color: context.resources.color.colorWhite),
+        titleSmall: TextStyle(
+            color: context.resources.color.colorWhite.withOpacity(0.7)),
+        labelLarge: TextStyle(color: context.resources.color.colorWhite),
+        labelMedium: TextStyle(color: context.resources.color.colorWhite),
+        labelSmall: TextStyle(
+            color: context.resources.color.colorWhite.withOpacity(0.7)),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: context.resources.color.colorBackground,
+        // The color when the item is selected
+        indicatorColor: context.resources.color.colorNeutral,
+        iconTheme: MaterialStateProperty.resolveWith(
+          (states) {
+            if (states.contains(MaterialState.selected)) {
+              return IconThemeData(
+                  color: context.resources.color.colorSecondary);
+            }
+
+            return IconThemeData(color: context.resources.color.colorSecondary);
+          },
+        ),
+        labelTextStyle: MaterialStateProperty.resolveWith(
+          (states) {
+            if (states.contains(MaterialState.selected)) {
+              return TextStyle(color: context.resources.color.colorSecondary);
+            }
+
+            return TextStyle(color: context.resources.color.colorSecondary);
+          },
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyle(color: context.resources.color.colorWhite),
+        // Text displayed on every input field
+        hintStyle: TextStyle(
+            color: context.resources.color.colorWhite.withOpacity(0.7)),
+      ),
+      listTileTheme:
+          ListTileThemeData(tileColor: context.resources.color.colorNeutral),
     );
   }
 }
