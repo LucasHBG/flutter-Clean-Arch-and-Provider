@@ -13,7 +13,7 @@ class Resources {
   Strings get strings {
     Locale locale = Localizations.localeOf(_context);
     switch (locale.languageCode) {
-      case 'pt-BR':
+      case 'pt-br':
         return BrazilianPortugueseStrings();
       // English is the default language
       default:
