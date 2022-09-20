@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
+import '../../../res/app_context_extension.dart';
 import '/res/constants/route_names.dart';
 import '/view_models/login_state.dart';
 
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Good Evening'),
+              /// Say different types of greetings
+              /// depending on the preferred language
+              Text(context.resources.strings.greetingsHomeScreenTitle),
               Row(
                 children: [
                   IconButton(

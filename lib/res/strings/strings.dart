@@ -4,4 +4,10 @@ abstract class Strings {
   String get homeTabName;
   String get searchTabName;
   String get collectionTabName;
+
+  // Login Screen text
+  String get emailTextLoginScreen;
+  String get passwordTextLoginScreen;
+  String get forgotPasswordTextLoginScreen;
+  String get enterButtonTextLoginScreen;
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '/res/constants/route_names.dart';
+import '../res/app_context_extension.dart';
 import '/view_models/login_state.dart';
 
 class LoginPage extends StatefulWidget {
@@ -44,29 +43,35 @@ class _LoginPageState extends State<LoginPage> {
               TextField(
                 controller: _email,
                 autocorrect: true,
-                decoration: const InputDecoration(hintText: 'Enter email here'),
+                decoration: InputDecoration(
+                  hintText: context.resources.strings.emailTextLoginScreen,
+                ),
                 keyboardType: TextInputType.emailAddress,
               ),
               TextField(
                 controller: _password,
                 autocorrect: false,
                 obscureText: true,
-                decoration:
-                    const InputDecoration(hintText: 'Enter password here'),
+                decoration: InputDecoration(
+                  hintText: context.resources.strings.passwordTextLoginScreen,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const TextButton(
+                  TextButton(
                     onPressed: null,
-                    child: Text('Esqueci a senha'),
+                    child: Text(
+                        context.resources.strings.forgotPasswordTextLoginScreen,
+                        style: const TextStyle(color: Colors.white60)),
                   ),
                   ElevatedButton(
                     onPressed: () {
                       // TODO: Add auth class
                       context.read<LoginState>().loggedIn = true;
                     },
-                    child: const Text('Entrar'),
+                    child: Text(
+                        context.resources.strings.enterButtonTextLoginScreen),
                   ),
                 ],
               ),

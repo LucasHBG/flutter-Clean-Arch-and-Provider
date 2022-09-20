@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../res/app_context_extension.dart';
 import '/res/constants/route_names.dart';
 import '/view/home_config/collection/collection_page.dart';
 import '/view/home_config/search/search_page.dart';
@@ -44,14 +45,26 @@ class _HomeConfigPageState extends State<HomeConfigPage> {
         index: _selectedIndex,
         children: const [HomePage(), SearchPage(), CollectionPage()],
       ),
+      ///
+      /// Here I'm using Material Design 3 to make this bottomNavBar.
+      /// Go search for this material design if your dont know what this is.
+      ///
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
-        destinations: const <NavigationDestination>[
-          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
+        destinations: <NavigationDestination>[
           NavigationDestination(
-              icon: Icon(Icons.library_music), label: 'Your Library'),
+              icon: const Icon(Icons.home),
+              label: context.resources.strings.homeTabName),
+          NavigationDestination(
+              icon: const Icon(Icons.search),
+              label: context.resources.strings.searchTabName),
+          NavigationDestination(
+              icon: const Icon(Icons.library_music),
+              label: context.resources.strings.collectionTabName),
         ],
+        ///
+        /// Send user to the selected Tab's screen
+        ///
         onDestinationSelected: (int index) {
           setState(
             () {

@@ -12,4 +12,18 @@ class EnglishStrings extends Strings {
 
   @override
   String get collectionTabName => "Your Library";
+  
+  // LoginScreen page
+
+  @override
+  String get emailTextLoginScreen => "Enter email here";
+
+  @override
+  String get passwordTextLoginScreen => "Enter password here";
+
+  @override
+  String get enterButtonTextLoginScreen => "Enter";
+
+  @override
+  String get forgotPasswordTextLoginScreen => "Forgot Password?";
 }
